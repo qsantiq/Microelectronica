@@ -1,0 +1,30 @@
+Tarea 1: Multiplexor
+
+Autor:
+Santiago Castro Montiel B51755
+
+Instrucciones de uso:
+
+1) Compilar: 
+    Realiza la síntesis con Yosys, compila y genera el archivo imagen de extensión .vcd
+    Comando:    make compile
+
+2) Síntesis:
+   Realiza el proceso de síntesis con la herramienta yosys
+   Comando:	make yosys
+
+3) Nomenclatura en síntesis:
+   Realiza el cambio de nombre en módulos instanciados en la descripción estructural	
+   Comando: 	make sed
+
+4) Gráficas: 
+   Muestra las señales en gtkwave:
+   Comando:	make gtk
+
+5) Limpiar:
+   Elimina archivos objeto
+   Comando: 	make clean	
+    
+6) Realizar todos los procesos:
+    Comando: 	make All 
+     

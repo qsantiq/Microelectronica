@@ -4,14 +4,10 @@
 (* src = "mux_e.v:5" *)
 module mux_e(out_e, sel, data_in, reset, clk);
   (* src = "mux_e.v:25" *)
-  wire _00_;
-  wire _01_;
-  wire _02_;
-  wire _03_;
-  wire _04_;
-  wire _05_;
-  wire _06_;
-  wire _07_;
+  wire _0_;
+  wire _1_;
+  wire _2_;
+  wire _3_;
   (* src = "mux_e.v:10" *)
   input clk;
   (* src = "mux_e.v:8" *)
@@ -24,52 +20,35 @@ module mux_e(out_e, sel, data_in, reset, clk);
   input reset;
   (* src = "mux_e.v:7" *)
   input sel;
-  NOT _08_ (
+  INVX1 _4_ (
+    .A(f_out_e),
+    .Y(_2_)
+  );
+  INVX1 _5_ (
     .A(reset),
-    .Y(_06_)
+    .Y(_3_)
   );
-  NOT _09_ (
-    .A(sel),
-    .Y(_07_)
-  );
-  NAND _10_ (
-    .A(_06_),
-    .B(f_out_e),
-    .Y(_01_)
-  );
-  NAND _11_ (
+  MUX2X1 _6_ (
     .A(data_in[1]),
-    .B(sel),
-    .Y(_02_)
+    .B(data_in[0]),
+    .S(sel),
+    .Y(_1_)
   );
-  NAND _12_ (
-    .A(data_in[0]),
-    .B(_07_),
-    .Y(_03_)
+  NOR2X1 _7_ (
+    .A(_3_),
+    .B(_1_),
+    .Y(_0_)
   );
-  NAND _13_ (
-    .A(_02_),
-    .B(_03_),
-    .Y(_04_)
-  );
-  NAND _14_ (
-    .A(reset),
-    .B(_04_),
-    .Y(_05_)
-  );
-  NOT _15_ (
-    .A(_05_),
-    .Y(_00_)
-  );
-  NAND _16_ (
-    .A(_01_),
-    .B(_05_),
+  MUX2X1 _8_ (
+    .A(_2_),
+    .B(_1_),
+    .S(_3_),
     .Y(out_e)
   );
   (* src = "mux_e.v:25" *)
-  DFF _17_ (
-    .C(clk),
-    .D(_00_),
+  DFFPOSX1 _9_ (
+    .CLK(clk),
+    .D(_0_),
     .Q(f_out_e)
   );
 endmodule

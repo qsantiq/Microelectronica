@@ -12,12 +12,15 @@ THIS_01 = _COND#Cadena a reemplazar
 FORTHIS_01 = _ESTR#Reemplazo de la cadena
 TARGET_GTKW= mux.gtkw
 
-vvp: banco
+help:
+	cat README
+
+All: compile sed autoinst gtk clean 	
+
+compile: sed
 	vvp $(TESTBENCH_0)
-
-banco: sed
 	$(COMP) -o $(TESTBENCH_0) $(TESTBENCH_0).v
-
+	
 sed: yosys
 	sed 's/$(THIS_00)/$(FORTHIS_00)/g' $(ESTRUCTURAL_0) > $(ESTRUCTURAL_0).temp && mv $(ESTRUCTURAL_0).temp $(ESTRUCTURAL_0);
 	sed 's/$(THIS_01)/$(FORTHIS_01)/g' $(ESTRUCTURAL_0) > $(ESTRUCTURAL_0).temp && mv $(ESTRUCTURAL_0).temp $(ESTRUCTURAL_0)

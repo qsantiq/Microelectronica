@@ -2,8 +2,8 @@
 `include "mux_c.v"
 `include "mux_e.v"
 `include "mux_t.v"
-`include "cmos_cells.v"
-//`include "gscl45nm.v"
+//`include "cmos_cells.v"
+`include "gscl45nm.v"
 
 module mux_tb;
 

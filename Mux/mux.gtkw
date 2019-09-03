@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.98 (w)1999-2019 BSI
+[*] Tue Sep  3 15:36:23 2019
+[*]
+[dumpfile] "/home/santiago/Documents/microelectronica/Microelectronica/Mux/mux.vcd"
+[dumpfile_mtime] "Tue Sep  3 15:34:56 2019"
+[dumpfile_size] 7093
+[savefile] "/home/santiago/Documents/microelectronica/Microelectronica/Mux/mux.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-16.309523 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] mux_tb.
+[sst_width] 233
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@200
+-Conductual
+@28
+mux_tb.mux_c.clk
+@29
+mux_tb.mux_c.sel
+@28
+mux_tb.mux_c.data_in[1:0]
+mux_tb.mux_c.f_out_c
+mux_tb.mux_c.out_c
+mux_tb.mux_c.reset
+@200
+-estructural
+@28
+mux_tb.mux_e.clk
+mux_tb.mux_e.sel
+mux_tb.mux_e.data_in[1:0]
+mux_tb.mux_e.out_e
+mux_tb.mux_e.f_out_e
+mux_tb.mux_e.reset
+[pattern_trace] 1
+[pattern_trace] 0
