@@ -1,0 +1,33 @@
+# read design
+read_verilog mux_c.v
+read_verilog -lib cmos_cells.v
+
+hierarchy -check -top mux_c
+
+# the high-level stuff
+proc; opt; fsm; opt; memory; opt
+
+# mapping to internal cell library
+techmap; opt
+
+# mapping flip-flops to cmos_cells.lib
+dfflibmap -liberty cmos_cells.lib
+#dfflibmap -liberty gscl45nm.lib 
+
+# mapping gates to cmos_cells.lib
+abc -liberty cmos_cells.lib
+#abc -liberty gscl45nm.lib 
+
+
+show
+ #cleanup
+clean
+
+log string -stdout
+
+# write synthesized design
+write_verilog mux_e.v
+
+
+
+
